@@ -21,7 +21,7 @@ local function farmExists()
 end
 
 local function notify(msg)
-    local notif = Instance.new("Hint", ws)
+    local notif = Instance.new("Message", ws)
     notif.Text = tostring(msg)
     wait(5)
     notif:Destroy()
