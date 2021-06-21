@@ -21,10 +21,12 @@ local function farmExists()
 end
 
 local function notify(msg)
-    local notif = Instance.new("Message", ws)
+    plr.PlayerGui.Progress.Level.Visible = false
+    local notif = Instance.new("Hint", ws)
     notif.Text = tostring(msg)
-    wait(5)
+    wait(3)
     notif:Destroy()
+    plr.PlayerGui.Progress.Level.Visible = true
 end
 
 local VirtualUser = game:GetService("VirtualUser")
