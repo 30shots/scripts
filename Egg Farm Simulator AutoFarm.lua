@@ -27,7 +27,6 @@ local function notify(msg)
     notif:Destroy()
 end
 
--- anti-afk (credits to the original creator(s))
 local VirtualUser = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
     VirtualUser:CaptureController()
