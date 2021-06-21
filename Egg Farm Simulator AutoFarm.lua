@@ -12,23 +12,6 @@ local weapon_args = {
     a2 = "219629d5067eddcdce55ed7968e9b53f"
 }
 
-local function farmExists()
-    for i,v in pairs(farms:GetChildren()) do
-        if tostring(v.Sign.Gui.Owner.Text) == tostring(plr.Name) then
-            return true
-        end
-    end
-end
-
-local function notify(msg)
-    plr.PlayerGui.Progress.Level.Visible = false
-    local notif = Instance.new("Hint", ws)
-    notif.Text = tostring(msg)
-    wait(3)
-    notif:Destroy()
-    plr.PlayerGui.Progress.Level.Visible = true
-end
-
 -- anti-afk (credits to original creator(s))
 local VirtualUser = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
@@ -37,14 +20,10 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
 end)
 
 for i,v in pairs(farms:GetChildren()) do
-    if farmExists() == nil then
-        notify("You don't have a farm, go claim one!")
-    elseif farmExists() == true then
-        if tostring(v.Owner.Value) == tostring(plr.Name) then
-            rs.RenderStepped:Connect(function()
-                plr.Character.HumanoidRootPart.CFrame = v.Chicken.CFrame
-                weaponRemote:FireServer(weapon_args.a1, weapon_args.a2)
-            end)
-        end
+    if tostring(v.Owner.Value) == tostring(plr.Name) then
+        rs.RenderStepped:Connect(function()
+            plr.Character.HumanoidRootPart.CFrame = v.Chicken.CFrame
+            weaponRemote:FireServer(weapon_args.a1, weapon_args.a2)
+        end)
     end
 end
