@@ -29,6 +29,7 @@ local function notify(msg)
     plr.PlayerGui.Progress.Level.Visible = true
 end
 
+-- anti-afk (credits to original creator(s))
 local VirtualUser = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
     VirtualUser:CaptureController()
