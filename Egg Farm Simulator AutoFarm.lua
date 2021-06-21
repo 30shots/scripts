@@ -29,7 +29,7 @@ end
 
 -- anti-afk (credits to the original creator(s))
 local VirtualUser = game:GetService("VirtualUser")
-plr.Idled:connect(function()
+game:GetService("Players").LocalPlayer.Idled:connect(function()
     VirtualUser:CaptureController()
     VirtualUser:ClickButton2(Vector2.new())
 end)
