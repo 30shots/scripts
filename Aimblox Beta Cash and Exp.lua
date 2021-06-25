@@ -1,4 +1,3 @@
--- if your a dev of aimblox reading this, your fuckin stupid
 local plr    = game:GetService("Players").LocalPlayer
 local remote = game:GetService("ReplicatedStorage").Remotes.HitLobbyTarget;
 
