@@ -14,7 +14,7 @@ local function destroyDamage()
     else
         local msg = Instance.new("Hint")
         msg.Parent = ws
-        msg.Text = "nothing to delete was found"
+        msg.Text = "theres nothing to delete bruh"
         wait(1)
         msg:Destroy()
     end
