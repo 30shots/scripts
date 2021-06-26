@@ -15,7 +15,7 @@ local function destroyDamage()
         local msg = Instance.new("Hint")
         msg.Parent = ws
         msg.Text = "theres nothing to delete bruh"
-        wait(1)
+        wait(3)
         msg:Destroy()
     end
 end
